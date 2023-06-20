@@ -48,7 +48,6 @@ const getAlljewells = async (req, res) => {
   }
 };
 
-
 const getOne = async (req, res) => {
   try {
     const { id } = req.params;
@@ -64,7 +63,6 @@ const getOne = async (req, res) => {
     return res.status(status).json({ ok: false, message });
   }
 };
-
 
 const filter = async (req, res) => {
   const { filtros } = req.query;
@@ -88,9 +86,9 @@ const filter = async (req, res) => {
     text += "WHERE %s %s '%s'";
     arrayFormat.push(name, operatorsQueryObject[operator], value);
     console.log(arrayFormat);
-    /*  if (key !== properties[properties.length - 1]) {
+    if (key !== properties[properties.length - 1]) {
       text += "AND ";
-    } */
+    }
   }
   try {
     const formatedQuery = format(text, ...arrayFormat);
