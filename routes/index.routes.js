@@ -11,15 +11,11 @@ router.get("/", indexController.welcomeMessage);
 
 router.get("/joyas", indexController.getAlljewells);
 
-/* router.post("/posts", indexController.makePost); */
 
 router.get("/joyas/:id", indexController.getOne);
 
 router.get("/joyas/filtros", indexController.reportandoQuery, indexController.filter);
 
-/* router.put("/posts/like/:id", indexController.modifyPost);
-
-router.delete("/posts/:id", indexController.deletePost); */
 
 
 

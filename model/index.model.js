@@ -32,14 +32,7 @@ const getJewells = async (limits, sort, page) => {
   return results;
 };
 
-/* const addPost = async ({ titulo, img, descripcion }) => {
-  const query =
-    "INSERT INTO posts (titulo, img, descripcion) VALUES (%s,%s,%s) RETURNING *";
-  const formatedQuery = format(query, [titulo, img, descripcion]);
-  const { rows } = await pool.query(formatedQuery);
-  console.log(rows[0]);
-  return rows[0];
-}; */
+
 
 const getOneJewell = async (id) => {
   const { rows } = await pool.query("SELECT * FROM inventario WHERE id=$1", [
@@ -51,29 +44,8 @@ const getOneJewell = async (id) => {
   return rows[0];
 };
 
-/* const putPost = async (id) => {
-  const text =
-    "UPDATE posts SET likes=COALESCE(likes,0)+1  WHERE id=$1 RETURNING *";
-  const { rows } = await pool.query(text, [id]);
-  if (rows.length === 0) {
-    throw { code: "404" };
-  }
-  return rows[0];
-};
-
-const removePost = async (id) => {
-  const text = "DELETE FROM posts WHERE id=$1 RETURNING *";
-  const { rows } = await pool.query(text, [id]);
-  if (rows.length === 0) {
-    throw { code: "404" };
-  }
-  return rows[0];
-}; */
 
 export const indexModel = {
   getJewells,
-/*   addPost, */
   getOneJewell,
-/*   putPost,
-  removePost, */
 };

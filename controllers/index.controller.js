@@ -48,26 +48,6 @@ const getAlljewells = async (req, res) => {
   }
 };
 
-/* const makePost = async (req, res) => {
-  const { titulo, img, descripcion } = req.body;
-  if (!titulo || !img || !descripcion) {
-    return res
-      .status(400)
-      .json({ ok: false, message: "Faltan datos por ingresar" });
-  }
-  try {
-    const result = await indexModel.addPost({ titulo, img, descripcion });
-    return res.json({
-      ok: true,
-      message: "Nuevo Post añadido",
-      result,
-    });
-  } catch (error) {
-    console.log(error.code);
-    const { status, message } = handleErrors(error.code);
-    return res.status(status).json({ ok: false, message });
-  }
-}; */
 
 const getOne = async (req, res) => {
   try {
@@ -85,38 +65,6 @@ const getOne = async (req, res) => {
   }
 };
 
-/* const modifyPost = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const result = await indexModel.putPost(id);
-    return res.json({
-      ok: true,
-      message: "Like Añadido",
-      result,
-    });
-  } catch (error) {
-    console.log(error.code);
-    const { status, message } = handleErrors(error.code);
-    return res.status(status).json({ ok: false, message });
-  }
-};
-
-const deletePost = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const result = await indexModel.removePost(id);
-    return res.json({
-      ok: true,
-      message: "Post eliminado",
-      result,
-    });
-  } catch (error) {
-    console.log(error);
-    console.log(error.code);
-    const { status, message } = handleErrors(error.code);
-    return res.status(status).json({ ok: false, message });
-  }
-}; */
 
 const filter = async (req, res) => {
   const { filtros } = req.query;
@@ -176,10 +124,7 @@ const reportandoQuery = async (req, res, next) => {
 export const indexController = {
   welcomeMessage,
   getAlljewells,
-  /*   makePost, */
   getOne,
   filter,
   reportandoQuery,
-  /*   modifyPost,
-  deletePost, */
 };
